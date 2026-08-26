@@ -194,37 +194,75 @@ a:hover{color:var(--accent)}
 /* ---------- a estante ---------- */
 .estante{padding-block:clamp(2.5rem,6vw,4rem) 0}
 .shelf{
-  list-style:none;margin:1.6rem 0 0;padding:0;
-  display:flex;align-items:flex-end;gap:.4rem;
-  overflow-x:auto;padding-bottom:.6rem;
+  list-style:none;margin:1.8rem 0 0;padding:0 .2rem 1.6rem;
+  display:flex;align-items:flex-end;gap:.45rem;
+  overflow-x:auto;
 }
 .spine{
-  flex:0 0 auto;width:clamp(2.5rem,4.4vw,3.1rem);
-  border-radius:2px 2px 0 0;
-  display:flex;align-items:center;justify-content:center;
-  padding-block:1.1rem;
-  position:relative;
-  box-shadow:inset -3px 0 6px rgba(0,0,0,.16),inset 2px 0 3px rgba(255,255,255,.08);
+  --leather:var(--accent);
+  --foil:#EBD7A2;
+  flex:0 0 auto;
+  inline-size:clamp(3.1rem,5.2vw,4rem);
+  block-size:calc(var(--h,1) * clamp(22rem,36vw,30rem));
+  position:relative;border-radius:5px 5px 2px 2px;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.44) 0%, rgba(0,0,0,.12) 9%,
+      rgba(255,255,255,.11) 32%, rgba(255,255,255,.03) 56%,
+      rgba(0,0,0,.14) 79%, rgba(0,0,0,.48) 100%),
+    repeating-linear-gradient(101deg,rgba(255,255,255,.038) 0 1px,rgba(0,0,0,0) 1px 3px),
+    repeating-linear-gradient(6deg,rgba(0,0,0,.05) 0 1px,rgba(0,0,0,0) 1px 4px),
+    var(--leather);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -2px 3px rgba(0,0,0,.40),
+    3px 0 9px -5px rgba(0,0,0,.55),
+    0 18px 26px -16px rgba(0,0,0,.70);
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease;
 }
-.spine span{
-  writing-mode:vertical-rl;transform:rotate(180deg);
-  font-family:var(--f-display);font-weight:500;
-  font-size:clamp(.58rem,1.05vw,.68rem);letter-spacing:.1em;text-transform:uppercase;
-  color:var(--spine-ink);white-space:nowrap;
-}
+/* nervuras e filetes dourados, cabeça e pé */
 .spine::before,.spine::after{
-  content:"";position:absolute;left:18%;right:18%;height:1px;background:var(--ouro);opacity:.75;
+  content:"";position:absolute;inset-inline:0;height:38px;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,0) 0 6px,
+    rgba(0,0,0,.30) 6px 7px,
+    rgba(255,255,255,.16) 7px 10px,
+    rgba(0,0,0,.30) 10px 11px,
+    rgba(0,0,0,0) 11px 17px,
+    var(--foil) 17px 18px,
+    rgba(0,0,0,0) 18px 38px);
+  opacity:.9;
 }
-.spine::before{top:.5rem;box-shadow:0 3px 0 -1.4px var(--ouro)}
-.spine::after{bottom:.5rem;box-shadow:0 -3px 0 -1.4px var(--ouro)}
-.spine--promulgada{background:var(--accent);height:21.5rem}
-.spine--outorgada{background:var(--outorgada);height:20.4rem}
-.spine--outorgada2{background:var(--outorgada-2);height:22.4rem}
-.spine--hibrida{background:var(--hibrida);height:21rem}
-:root[data-theme="dark"] .spine span,
-:root:not([data-theme="light"]) .spine span{color:#15170F}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .spine span{color:var(--spine-ink)}}
-:root[data-theme="light"] .spine span{color:var(--spine-ink)}
+.spine::before{top:14px}
+.spine::after{bottom:14px;rotate:180deg}
+.spine a{
+  position:absolute;inset:0;z-index:1;
+  display:flex;align-items:center;justify-content:space-between;
+  writing-mode:vertical-rl;rotate:180deg;
+  padding-inline:3rem;padding-block:.28rem;gap:.6rem;box-sizing:border-box;
+  text-decoration:none;color:var(--foil);
+  text-shadow:0 1px 1px rgba(0,0,0,.55);
+}
+.sp-name{
+  font-family:var(--f-display);font-weight:500;
+  font-size:clamp(.52rem,.92vw,.62rem);letter-spacing:.045em;text-transform:uppercase;
+  line-height:1.34;flex:0 1 auto;min-inline-size:0;
+}
+.sp-year{
+  flex:0 0 auto;font-family:var(--f-mono);font-size:clamp(.6rem,1.05vw,.7rem);letter-spacing:.16em;
+}
+.spine:hover,.spine:focus-within{transform:translateY(-9px);filter:brightness(1.07) saturate(1.05)}
+.spine:hover a,.spine a:focus-visible{color:#F8ECC4;outline:none}
+.spine:focus-within{box-shadow:0 0 0 2px var(--ouro),inset 0 1px 0 rgba(255,255,255,.2),0 18px 26px -16px rgba(0,0,0,.7)}
+.spine--promulgada{--leather:#2E5E3F}
+.spine--outorgada{--leather:#7B2B27}
+.spine--outorgada2{--leather:#5E2229}
+.spine--hibrida{--leather:#A9541F}
+.shelf-hint{
+  margin:1.1rem 0 0;font-family:var(--f-mono);font-size:var(--step--1);
+  letter-spacing:.02em;color:var(--muted);
+}
+@media (prefers-reduced-motion:reduce){.spine{transition:none}.spine:hover{transform:none}}
 
 .legend{
   display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;margin:1.4rem 0 0;padding:0;
