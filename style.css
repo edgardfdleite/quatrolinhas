@@ -95,7 +95,7 @@ a:hover{color:var(--accent)}
 .mark .glyph i:nth-child(3){width:100%}
 @media (max-width:34rem){.mark .name{font-size:var(--step-0)}}
 .mark .name{font-family:var(--f-display);font-size:var(--step-1);font-weight:600;letter-spacing:.005em}
-.nav{display:flex;gap:1.6rem;font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase}
+.nav{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--accent)}
 
@@ -178,6 +178,12 @@ a:hover{color:var(--accent)}
 }
 .field p:last-child{margin-bottom:0}
 
+.prose h3{font-family:var(--f-display);font-weight:500;font-size:var(--step-1);line-height:1.2;margin-block:2.1em .6em}
+.fonte{
+  font-size:var(--step--1);color:var(--muted);line-height:1.5;
+  border-left:2px solid var(--rule);padding-left:.9rem;margin-block:-.5em 1.6em;
+}
+.fonte a{color:inherit}
 .sources{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;font-size:var(--step--1);color:var(--muted)}
 .sources h2{font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;margin:0 0 .7rem;font-weight:500;color:var(--muted)}
 .sources ul{margin:0;padding-left:1.1rem}
