@@ -179,6 +179,9 @@ a:hover{color:var(--accent)}
 .field p:last-child{margin-bottom:0}
 
 .prose h3{font-family:var(--f-display);font-weight:500;font-size:var(--step-1);line-height:1.2;margin-block:2.1em .6em}
+.constr{margin:2.2em 0;padding:clamp(1rem,3vw,1.8rem);border:1px solid var(--rule);background:var(--paper-2)}
+.constr svg{display:block;width:100%;height:auto;color:var(--muted);overflow:visible}
+.constr figcaption{margin-top:1.2rem;padding-top:.9rem;border-top:1px solid var(--rule);font-size:var(--step--1);color:var(--muted);line-height:1.55}
 .fonte{
   font-size:var(--step--1);color:var(--muted);line-height:1.5;
   border-left:2px solid var(--rule);padding-left:.9rem;margin-block:-.5em 1.6em;
