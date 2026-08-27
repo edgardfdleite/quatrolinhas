@@ -243,7 +243,7 @@ a:hover{color:var(--accent)}
   position:absolute;inset:0;z-index:1;
   display:flex;align-items:center;justify-content:space-between;
   writing-mode:vertical-rl;rotate:180deg;
-  padding-inline:3rem;padding-block:.28rem;gap:.6rem;box-sizing:border-box;
+  padding-inline:2.9rem 3.7rem;padding-block:.28rem;gap:.45rem;box-sizing:border-box;
   text-decoration:none;color:var(--foil);
   text-shadow:0 1px 1px rgba(0,0,0,.55);
 }
@@ -255,6 +255,7 @@ a:hover{color:var(--accent)}
 .sp-year{
   flex:0 0 auto;font-family:var(--f-mono);font-size:clamp(.6rem,1.05vw,.7rem);letter-spacing:.16em;
 }
+
 .spine:hover,.spine:focus-within{transform:translateY(-9px);filter:brightness(1.07) saturate(1.05)}
 .spine:hover a,.spine a:focus-visible{color:#F8ECC4;outline:none}
 .spine:focus-within{box-shadow:0 0 0 2px var(--ouro),inset 0 1px 0 rgba(255,255,255,.2),0 18px 26px -16px rgba(0,0,0,.7)}
@@ -274,7 +275,7 @@ a:hover{color:var(--accent)}
     0 0 0 1px rgba(254,221,0,.35);
 }
 .spine--vigente::before,.spine--vigente::after{opacity:1}
-.spine--vigente a{padding-inline:3rem 6.6rem}
+.spine--vigente a{padding-inline:2.9rem 7.4rem}
 .sp-flag{
   position:absolute;left:50%;top:4.9rem;z-index:2;pointer-events:none;
   width:1.5rem;height:1.5rem;translate:-50% -50%;rotate:45deg;
