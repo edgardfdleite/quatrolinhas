@@ -238,12 +238,12 @@ a:hover{color:var(--accent)}
   opacity:.9;
 }
 .spine::before{top:2.1rem}
-.spine::after{bottom:14px;rotate:180deg}
+.spine::after{bottom:2.1rem;rotate:180deg}
 .spine a{
   position:absolute;inset:0;z-index:1;
   display:flex;align-items:center;justify-content:space-between;
   writing-mode:vertical-rl;rotate:180deg;
-  padding-inline:2.9rem 6.1rem;padding-block:.28rem;box-sizing:border-box;
+  padding-inline:4.6rem 4.3rem;padding-block:.28rem;box-sizing:border-box;
   text-decoration:none;color:var(--foil);
   text-shadow:0 1px 1px rgba(0,0,0,.55);
 }
@@ -263,7 +263,7 @@ a:hover{color:var(--accent)}
   font-size:clamp(.66rem,1.1vw,.8rem);letter-spacing:.02em;
 }
 .sp-sigla{
-  top:3.85rem;
+  top:auto;bottom:.7rem;
   font-family:var(--f-mono);font-size:clamp(.46rem,.78vw,.55rem);letter-spacing:.09em;
   opacity:.92;
 }
@@ -310,14 +310,14 @@ a:hover{color:var(--accent)}
 }
 .spine--vigente::after{opacity:1}
 .sp-flag{
-  position:absolute;left:50%;top:5.6rem;z-index:2;pointer-events:none;
+  position:absolute;left:50%;top:3.75rem;z-index:2;pointer-events:none;
   width:1.55rem;height:1.085rem;translate:-50% 0;
   border-radius:1.5px;overflow:hidden;
   box-shadow:0 1px 3px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.16);
 }
 .sp-flag .flagmini{display:block;width:100%;height:100%}
-.spine--vigente a{padding-inline:2.9rem 8.6rem}
-.spine--vigente .sp-year,.spine--vigente .sp-sigla{color:#0B7A3F;text-shadow:none}
+.spine--vigente a{padding-inline:4.6rem 8.6rem}
+.spine--vigente .sp-year{color:#0B7A3F;text-shadow:none}
 .spine--vigente .sp-name{color:#F4F6F1}
 .shelf-hint{
   margin:1.1rem 0 0;font-family:var(--f-mono);font-size:var(--step--1);
